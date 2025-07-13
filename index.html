@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theycallme_jo_ | Content Creator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;800&display=swap">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;800&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+        
+        .montserrat-bold {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
+        .montserrat-regular {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #E8F9FD 100%, #FFFFFF 100%);
+        }
+        
+        .about-gradient {
+            background: linear-gradient(135deg, #f1ecec 100%, #E8F9FD 40%);
+        }
+        
+        .gallery-gradient {
+            background: linear-gradient(135deg, #E8F9FD 0%, #59CE8F 50%, #FFFFFF 50%);
+        }
+        
+        .testimonials-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #59CE8F 20%, #E8F9FD 100%);
+        }
+        
+        .articles-gradient {
+            background: linear-gradient(135deg, #E8F9FD 0%, #FFFFFF 100%);
+        }
+        
+        .connect-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FF1E00 20%, #E8F9FD 100%);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+        }
+        
+        .slide-up {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+        
+        .slide-up.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(255, 30, 0, 0.6);
+        }
+        
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .hero-image-main {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        .hero-image-main:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-image-secondary {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slideInRight 1s ease-out 0.3s both;
+        }
+        
+        .hero-image-secondary:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .image-glow {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg) translateX(-100%);
+            transition: transform 0.6s;
+            z-index: 1;
+        }
+        
+        .image-glow:hover::before {
+            transform: rotate(45deg) translateX(100%);
+        }
+        
+        @keyframes slideInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+        
+        @keyframes slideInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(100px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+        
+        .pulse-border {
+            position: relative;
+        }
+        
+        .pulse-border::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, #FF1E00, #59CE8F, #FF1E00);
+            border-radius: inherit;
+            z-index: -1;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.02);
+            }
+        }
+        
+        .btn-primary {
+            background-color: #FF1E00;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #E81700;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 30, 0, 0.4);
+        }
+        
+        /* About Section Animations */
+        @keyframes slideInText {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes quoteFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .slide-in-text {
+            animation: slideInText 0.8s ease-out;
+        }
+
+        .slide-in-text.delay-1 {
+            animation-delay: 0.2s;
+            animation-fill-mode: both;
+        }
+
+        .slide-in-text.delay-2 {
+            animation-delay: 0.4s;
+            animation-fill-mode: both;
+        }
+
+        .quote-decoration svg {
+            animation: quoteFloat 3s ease-in-out infinite;
+        }
+
+        .highlight-text {
+            background: linear-gradient(45deg, #FF1E00, #FF6B35);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .highlight-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(45deg, #FF1E00, #FF6B35);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-text:hover::after {
+            transform: scaleX(1);
+        }
+
+        .about-buttons a {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-buttons a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .about-buttons a:hover::before {
+            left: 100%;
+        }
+
+        .stat-item {
+            animation: countUp 0.6s ease-out;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .counter {
+            background: linear-gradient(45deg, #FF1E00, #FF6B35);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-content {
+            position: relative;
+        }
+
+        .about-content::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255, 30, 0, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            animation: quoteFloat 4s ease-in-out infinite;
+        }
+
+        /* Style Models Section */
+        .style-models-gradient {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .style-model-card {
+            cursor: pointer;
+            will-change: transform;
+        }
+
+        .style-model-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 30, 0, 0.1), rgba(255, 107, 53, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .style-model-card:hover::before {
+            opacity: 1;
+        }
+
+        .style-model-card img {
+            filter: brightness(1) contrast(1);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .style-model-card:hover img {
+            filter: brightness(1.1) contrast(1.1) saturate(1.2);
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .style-model-card:hover .bg-white\/20 {
+            animation: heartbeat 1s ease-in-out;
+        }
+        
+        /* Reel Cards Styling */
+        .reel-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .reel-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .reel-card .aspect-\[9\/16\] {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reel-card:hover .aspect-\[9\/16\]::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 1.5s ease-in-out;
+            z-index: 1;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .reel-card .play-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reel-card:hover .play-button {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="montserrat-regular text-black">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white bg-opacity-90 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="great-vibes text-3xl md:text-4xl text-[#FF1E00]">theycallme_jo_</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">Home</a>
+                    <a href="#about" class="hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">About</a>
+                    <a href="#gallery" class="hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">Gallery</a>
+                    <a href="#testimonials" class="hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">Testimonials</a>
+                    <a href="#connect" class="hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">Connect</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                <a href="#home" class="flex items-center justify-center gap-2 hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-house"></i>
+                    Home
+                </a>
+                <a href="#about" class="flex items-center justify-center gap-2 hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-user"></i>
+                    About
+                </a>
+                <a href="#gallery" class="flex items-center justify-center gap-2 hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-image"></i>
+                    Gallery
+                </a>
+                <a href="#testimonials" class="flex items-center justify-center gap-2 hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-comments"></i>
+                    Testimonials
+                </a>
+                <a href="#connect" class="flex items-center justify-center gap-2 hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">
+                    <i class="fas fa-envelope"></i>
+                    Connect
+                </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20 pb-10 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 flex justify-center items-center gap-4 slide-up md:mt-2 mt-12 ">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-[#59CE8F] rounded-full absolute -z-10 top-4 left-4 floating opacity-70"></div>
+                        <div class="w-48 h-48 md:w-64 md:h-64 bg-[#FF1E00] rounded-full absolute -z-10 -bottom-6 -right-6 floating opacity-50" style="animation-delay: 1.5s;"></div>
+                         <img src="Images/1.jpg" 
+                             alt="Jo posing in Miami" 
+                             class="w-64 h-64 md:w-64 md:h-96 object-cover rounded-2xl shadow-2xl border-4 border-white hero-image-main image-glow pulse-border">  
+                    </div>
+                    <img src="Images/2.jpg" 
+                             alt="Jo posing in Miami" 
+                             class="w-56 h-56 md:w-56 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-white hero-image-secondary image-glow ml-4">
+                </div>
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in text-center md:text-left md:mt-2 mt-12">
+                    <h1 class="great-vibes text-4xl md:text-7xl text-[#FF1E00] mb-6">Hey, I'm Joanne!</h1>
+                    <h2 class="montserrat-bold text-1xl md:text-3xl mb-6">Miami-based content creator and style curator.</h2>
+                    <p class="text-md md:text-lg mb-8">Discover bold fashion, viral finds, and good vibes.</p>
+                    <a href="#gallery" class="btn-primary text-white px-8 py-3 rounded-full inline-block">Shop My Looks</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-gradient py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="great-vibes text-4xl md:text-6xl text-center text-[#FF1E00] mb-16 fade-in">Who is Joanne Jones?</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 slide-up">
+                    <div class="relative md:ml-32">
+                        <div class="w-64 h-96 md:w-96 md:h-96 bg-[#FF1E00] rounded-lg absolute -z-10 top-4 left-4 floating"></div>
+                        <img src="Images/jo6.jpg" 
+                             alt="Jo styling outfits" 
+                             class="w-64 h-96 md:w-96 md:h-96 object-cover rounded-lg border-4 border-white shadow-xl">
+                    </div>
+                </div>
+                <div class="md:w-1/2 fade-in about-content">
+                    <!-- Decorative Quote Mark -->
+                    <div class="quote-decoration mb-6">
+                        <svg class="w-12 h-12 text-[#FF1E00] opacity-30" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Enhanced Text Content -->
+                    <div class="about-text-container">
+                        <p class="text-lg mb-6 about-intro slide-in-text text-justify">I'm <span class="text-[#FF1E00] font-bold">Jo</span> — a Miami-based fashion girlie with a love for <span class="highlight-text">TikTok trends</span>, <span class="highlight-text">Amazon steals</span>, and <span class="highlight-text">classic glam</span>.</p>
+                        
+                        <p class="text-lg mb-6 about-description slide-in-text delay-1 text-justify">I mix <em>laughs with luxe</em>, curating pieces that fit your vibe and your budget. Whether it's high-end designer dupes or thrift store treasures, I've got an eye for style that turns heads without breaking the bank.</p>
+                        
+                        <p class="text-lg mb-8 about-mission slide-in-text delay-2 text-justify">My content is all about making fashion <strong class="text-[#FF1E00]">accessible</strong>, <strong class="text-[#FF1E00]">fun</strong>, and <strong class="text-[#FF1E00]">unapologetically bold</strong>. From beachside bikinis to downtown dinner looks, I'll show you how to rock every occasion with confidence.</p>
+                    </div>
+                    
+                    
+                    
+                    <!-- Social Stats -->
+                    <div class="mt-8 flex flex-wrap gap-6 about-stats">
+                        <div class="stat-item text-center">
+                            <div class="text-2xl font-bold text-[#FF1E00] counter" data-target="50">7,906</div>
+                            <div class="text-sm text-gray-600">K+ Followers</div>
+                        </div>
+                        <div class="stat-item text-center">
+                            <div class="text-2xl font-bold text-[#FF1E00] counter" data-target="1000">500</div>
+                            <div class="text-sm text-gray-600">+ Outfits Styled</div>
+                        </div>
+                        <div class="stat-item text-center">
+                            <div class="text-2xl font-bold text-[#FF1E00] counter" data-target="95">100%</div>
+                            <div class="text-sm text-gray-600">% Happy Clients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-gradient py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[#FF1E00] mb-4 fade-in">My Collections</h2>
+            <p class="text-center mb-12 max-w-2xl mx-auto">Curated fashion finds for every style and budget</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- LTK Finds -->
+                <div class="gallery-item group relative bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 slide-up border border-pink-100">
+                    <div class="relative overflow-hidden">
+                        <img src="Images/prod11.jpg" 
+                             alt="Sunset Linen Look" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-gradient-to-r from-pink-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                            💖 LTK FIND
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-3 right-6 w-6 h-6 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full shadow-lg"></div>
+                        <h3 class="montserrat-bold text-xl mb-3 text-gray-800 group-hover:text-pink-600 transition-colors duration-300">✨ Activewear</h3>
+                        <p class="mb-4 text-gray-600 leading-relaxed">Date night dress perfection! <br><span class="text-pink-500 font-semibold">#LTKFindsUnder100 #LTKActive</span></p>
+                        <a href="https://www.shopltk.com/explore/Theycallme_jo_/posts/e4f1e704-3f71-11f0-afc6-0242ac110012" class="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-6 py-3 rounded-full inline-block text-sm font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">🛍️ Shop on LTK</a>
+                    </div>
+                </div>
+                
+                <!-- Amazon Picks -->
+                <div class="gallery-item group relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 slide-up border border-blue-100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://m.media-amazon.com/images/I/31XmGV8qa0L._AC_.jpg" 
+                             alt="Amazon Dress" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                            📦 AMAZON
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-3 right-6 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg"></div>
+                        <h3 class="montserrat-bold text-xl mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">👑 Trendy Queen</h3>
+                        <p class="mb-4 text-gray-600 leading-relaxed">Under <span class="text-green-600 font-bold">$23.99</span> Trendy Queen Womens Mini Summer Dresses 2025 Going.</p>
+                        <a href="#" class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-full inline-block text-sm font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">🛒 Shop on Amazon</a>
+                    </div>
+                </div>
+
+                <!-- LTK Finds -->
+                <div class="gallery-item group relative bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 slide-up border border-rose-100">
+                    <div class="relative overflow-hidden">
+                        <img src="Images/lkt2.jpg" 
+                             alt="Sunset Linen Look" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 left-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                            💡 STYLE TIP
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-3 right-6 w-6 h-6 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full shadow-lg"></div>
+                        <h3 class="montserrat-bold text-xl mb-3 text-gray-800 group-hover:text-rose-600 transition-colors duration-300">💫 LTKStyleTip</h3>
+                        <p class="mb-4 text-gray-600 leading-relaxed">This was actually a size medium! <br><span class="text-rose-500 font-semibold">#LTKFindsUnder50 #LTKFindsUnder100</span></p>
+                        <a href="https://www.shopltk.com/explore/Theycallme_jo_/posts/e70825b8-5ffd-11f0-b7a9-0242ac11000d" class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-6 py-3 rounded-full inline-block text-sm font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">✨ Shop on LTK</a>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Style Models Section -->
+    <section id="style-models" class="style-models-gradient py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[#FF1E00] mb-4 fade-in">Style Models</h2>
+            <p class="text-center mb-12 max-w-2xl mx-auto">Devoted wife & loving mother Grateful to be able to balance family life with my passion for fashion and good affordable finds. A true style enthusiast</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Style Model 1 -->
+                <div class="style-model-card group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                    <div class="relative overflow-hidden">
+                        <img src="Images/model3.jpg" 
+                             alt="Casual Chic Look" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-bold mb-2">Casual Chic</h3>
+                            <p class="text-sm opacity-90">Effortless everyday style</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style Model 2 -->
+                <div class="style-model-card group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                    <div class="relative overflow-hidden">
+                        <img src="Images/model2.jpg" 
+                             alt="Evening Glam Look" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-bold mb-2">Evening Glam</h3>
+                            <p class="text-sm opacity-90">Sophisticated night out vibes</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style Model 3 -->
+                <div class="style-model-card group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                    <div class="relative overflow-hidden">
+                        <img src="Images/model1.jpg" 
+                             alt="Beach Ready Look" 
+                             class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-bold mb-2">Beach Ready</h3>
+                            <p class="text-sm opacity-90">Miami summer essentials</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Style Model 4 -->
+                <div class="style-model-card group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                    <div class="relative overflow-hidden">
+                        <img src="Images/jo6.jpg" 
+                             alt="Street Style Look" 
+                             class="w-full h-80 md:w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-bold mb-2">Street Style</h3>
+                            <p class="text-sm opacity-90">Urban fashion forward</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="overflow-x-auto pb-12 mt-12">
+                    <div class="flex space-x-4 sm:space-x-8 w-max px-4">
+                        <!-- Video 1 -->
+                        <div class="w-56 sm:w-72 flex-shrink-0 video-card">
+                            <div class="phone-mockup mx-auto" style="width: 200px; height: 400px; position: relative; border-radius: 35px; background: linear-gradient(145deg, #2c2c2c, #1a1a1a); padding: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1); transform: perspective(1000px) rotateY(-5deg) rotateX(5deg); transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);">
+                                <div class="phone-screen" style="width: 100%; height: 100%; border-radius: 28px; overflow: hidden; background: #000; position: relative;">
+                                    <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                                        <source src="/Images/vid1.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="video-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                                        <div class="bg-white bg-opacity-90 rounded-full p-3 backdrop-blur-sm">
+                                            <i class="fas fa-volume-up text-soft-pink text-xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 50px; height: 5px; background: #333; border-radius: 3px; z-index: 10;"></div>
+                                <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 35px; height: 3px; background: #333; border-radius: 2px; z-index: 10;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video 2 -->
+                        <div class="w-56 sm:w-72 flex-shrink-0 video-card">
+                            <div class="phone-mockup mx-auto" style="width: 200px; height: 400px; position: relative; border-radius: 35px; background: linear-gradient(145deg, #2c2c2c, #1a1a1a); padding: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1); transform: perspective(1000px) rotateY(-5deg) rotateX(5deg); transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);">
+                                <div class="phone-screen" style="width: 100%; height: 100%; border-radius: 28px; overflow: hidden; background: #000; position: relative;">
+                                    <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                                        <source src="/Images/vid2.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="video-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                                        <div class="bg-white bg-opacity-90 rounded-full p-3 backdrop-blur-sm">
+                                            <i class="fas fa-volume-up text-soft-pink text-xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 50px; height: 5px; background: #333; border-radius: 3px; z-index: 10;"></div>
+                                <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 35px; height: 3px; background: #333; border-radius: 2px; z-index: 10;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video 3 -->
+                        <div class="w-56 sm:w-72 flex-shrink-0 video-card">
+                            <div class="phone-mockup mx-auto" style="width: 200px; height: 400px; position: relative; border-radius: 35px; background: linear-gradient(145deg, #2c2c2c, #1a1a1a); padding: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1); transform: perspective(1000px) rotateY(-5deg) rotateX(5deg); transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);">
+                                <div class="phone-screen" style="width: 100%; height: 100%; border-radius: 28px; overflow: hidden; background: #000; position: relative;">
+                                    <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                                        <source src="/Images/vid3.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="video-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                                        <div class="bg-white bg-opacity-90 rounded-full p-3 backdrop-blur-sm">
+                                            <i class="fas fa-volume-up text-soft-pink text-xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 50px; height: 5px; background: #333; border-radius: 3px; z-index: 10;"></div>
+                                <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 35px; height: 3px; background: #333; border-radius: 2px; z-index: 10;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video 4 -->
+                        <div class="w-56 sm:w-72 flex-shrink-0 video-card">
+                            <div class="phone-mockup mx-auto" style="width: 200px; height: 400px; position: relative; border-radius: 35px; background: linear-gradient(145deg, #2c2c2c, #1a1a1a); padding: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1); transform: perspective(1000px) rotateY(-5deg) rotateX(5deg); transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);">
+                                <div class="phone-screen" style="width: 100%; height: 100%; border-radius: 28px; overflow: hidden; background: #000; position: relative;">
+                                    <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                                        <source src="/Images/vid4.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="video-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: all 0.3s ease;">
+                                        <div class="bg-white bg-opacity-90 rounded-full p-3 backdrop-blur-sm">
+                                            <i class="fas fa-volume-up text-soft-pink text-xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 50px; height: 5px; background: #333; border-radius: 3px; z-index: 10;"></div>
+                                <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 35px; height: 3px; background: #333; border-radius: 2px; z-index: 10;"></div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>           
+        </div>
+             
+    </section>
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-gradient py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[#FF1E00] mb-16 fade-in">Love from Followers</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg slide-up hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-150" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-225" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="mb-6 italic group-hover:text-[#FF1E00] transition-colors duration-300">"Jo's Amazon finds are always 10/10! She makes it so easy to stay cute on a budget. I've completely revamped my wardrobe thanks to her recommendations."</p>
+                    <p class="font-bold group-hover:text-[#FF1E00] group-hover:scale-105 transition-all duration-300">— Alana M.</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg slide-up hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-150" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-225" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="mb-6 italic group-hover:text-[#FF1E00] transition-colors duration-300">"I never thought I could pull off high fashion until I found Jo's page. Her styling tips gave me the confidence to try new looks I never would have considered before!"</p>
+                    <p class="font-bold group-hover:text-[#FF1E00] group-hover:scale-105 transition-all duration-300">— Tasha R.</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg slide-up hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-150" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-225" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <svg class="w-5 h-5 text-yellow-400 group-hover:text-yellow-500 group-hover:scale-110 transition-all duration-300 delay-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                    <p class="mb-6 italic group-hover:text-[#FF1E00] transition-colors duration-300">"As a busy mom, I don't have time to shop around. Jo's LTK collections have saved me so much time and money. I can always count on her picks to be stylish and practical."</p>
+                    <p class="font-bold group-hover:text-[#FF1E00] group-hover:scale-105 transition-all duration-300">— Danielle K.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Connect Section -->
+    <section id="connect" class="connect-gradient py-10 px-6">
+        <div class="container mx-auto">
+            <h2 class="great-vibes text-4xl md:text-5xl text-center text-white mb-4 fade-in">Let's Connect & Collab</h2>
+            <p class="text-center text-white mb-12 max-w-2xl mx-auto">Follow for daily style inspiration, behind-the-scenes, and exclusive deals</p>
+            
+            <div class="flex justify-center space-x-4 md:space-x-8 mb-2 fade-in">
+               <!-- Instagram -->
+                <a href="https://www.instagram.com/theycallme_jo_/" 
+                            class="bg-white w-12 h-12 rounded-full flex items-center justify-center glow-hover 
+                                    hover:bg-gradient-to-r hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 
+                                    transition-all duration-300 group">
+                            <svg class="w-6 h-6 text-[#FF1E00] group-hover:text-white transition-colors duration-300" 
+                                fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 
+                                        3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 
+                                        0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919
+                                        -1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07
+                                        -3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849
+                                        0-3.204.013-3.583.07-4.849
+                                        .149-3.227 1.664-4.771 4.919-4.919
+                                        1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072
+                                        2.695.272.273 2.69.073 7.052
+                                        .014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948
+                                        .2 4.358 2.618 6.78 6.98 6.98
+                                        C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072
+                                        4.354-.2 6.782-2.618 6.979-6.98
+                                        .059-1.28.073-1.689.073-4.948
+                                        0-3.259-.014-3.667-.072-4.947
+                                        -.196-4.354-2.617-6.78-6.979-6.98
+                                        C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324
+                                        6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881
+                                        1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                            </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=2064897&ref=_ig_profile_ac" class="bg-white w-12 h-12 rounded-full flex items-center justify-center glow-hover hover:bg-[#1877F2] hover:text-white transition-all duration-300 group">
+                    <svg class="w-6 h-6 text-[#FF1E00] group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+                <!-- Amazon -->
+                <a href="https://www.amazon.com/shop/theycallme_jo_?fbclid=PAZXh0bgNhZW0CMTEAAadndRDgt_PwHnq0CBmyarl1O-_l1iz_dHfKYEUatHr1xGsMwefj6rvJglgjIA_aem_6JK4D4XuPxkm_3LNYDcdxQ" 
+                    class="bg-white w-12 h-12 rounded-full flex items-center justify-center glow-hover 
+                            hover:bg-[#FF9900] hover:text-white transition-all duration-300 group">
+                    <i class="fab fa-amazon text-[#FF1E00] text-xl group-hover:text-white transition-colors duration-300"></i>
+                    </a>
+                <!-- LTK (Like to Know It) -->
+               <a href="https://www.shopltk.com/explore/Theycallme_jo_?tab=posts" 
+                    class="bg-white w-12 h-12 rounded-full flex items-center justify-center glow-hover 
+                            hover:bg-black hover:text-white transition-all duration-300 group">
+                    <i class="fas fa-heart text-[#FF1E00] text-xl group-hover:text-white transition-colors duration-300"></i>
+                 </a>
+
+              <!-- Tiktok -->
+                 <a href="https://www.tiktok.com/@theycallme_jo_" 
+                    class="bg-white w-12 h-12 rounded-full flex items-center justify-center glow-hover 
+                            hover:bg-black hover:text-white transition-all duration-300 group">
+                    <i class="fab fa-tiktok text-[#FF1E00] text-xl group-hover:text-white transition-colors duration-300"></i>
+                    </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 px-6">
+        <div class="container mx-auto">
+           <h2 class="great-vibes text-2xl md:text-2xl text-center text-white mb-4 fade-in">
+                📩 <a href="mailto:joanneashley23@gmail.com" class="hover:underline hover:text-[#E8F9FD] transition duration-300">
+                    joanneashley23@gmail.com
+                </a> 
+                </h2>
+            <div class="text-sm  text-center">© 2025 theycallme_jo_ | Made with 💖 in Miami</div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const slideUpElements = document.querySelectorAll('.slide-up');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const fadeObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+        
+        const slideUpObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        slideUpElements.forEach(element => {
+            slideUpObserver.observe(element);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
