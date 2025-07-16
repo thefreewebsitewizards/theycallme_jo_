@@ -6,9 +6,9 @@
     <title>theycallme_jo_ | Content Creator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;800&family=Anton&family=Allura&display=swap">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;800&family=Anton&family=Allura&display=swap');
         
         body {
             font-family: 'Montserrat', sans-serif;
@@ -17,6 +17,14 @@
         
         .great-vibes {
             font-family: 'Great Vibes', cursive;
+        }
+        
+        .anton {
+            font-family: 'Anton', sans-serif;
+        }
+        
+        .allura {
+            font-family: 'Allura', cursive;
         }
         
         .montserrat-bold {
@@ -30,7 +38,21 @@
         }
         
         .hero-gradient {
-            background: linear-gradient(135deg, #E8F9FD 100%, #FFFFFF 100%);
+            background: linear-gradient(90deg, #E8F9FD 50%, rgba(0,0,0,0.4) 50%), 
+                        url('Images/hero2.jpg');
+            background-size: 100% 100%, 50% 100%;
+            background-position: left, right;
+            background-repeat: no-repeat;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-gradient {
+                background: linear-gradient(180deg, #E8F9FD 10%, rgba(0,0,0,0.4) 30%), 
+                            url('Images/hero2.jpg');
+                background-size: 100% 100%, 100% 70%;
+                background-position: top, bottom;
+                background-repeat: no-repeat;
+            }
         }
         
         .about-gradient {
@@ -432,19 +454,17 @@
     <nav class="fixed w-full bg-white bg-opacity-90 z-50 shadow-sm">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="#" class="great-vibes text-3xl md:text-4xl text-[#FF1E00]">theycallme_jo_</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">Home</a>
-                    <a href="#about" class="hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">About</a>
-                    <a href="#gallery" class="hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">Gallery</a>
-                    <a href="#testimonials" class="hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">Testimonials</a>
-                    <a href="#connect" class="hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">Connect</a>
+                <div class="flex-1"></div>
+                <div class="flex items-center">
+                    <a href="#" class="great-vibes text-4xl md:text-5xl text-[black]">J</a><span class="text-2xl md:text-3xl text-[black]" style="font-family: anton;">oanne</span>  <a href="#" class="great-vibes text-4xl md:text-5xl text-[black]">J</a><span class="text-2xl md:text-3xl text-[black]" style="font-family: anton;">ones </span>
                 </div>
-                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <div class="flex-1 flex justify-end">
+                    <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
             <div class="md:hidden hidden mt-4" id="mobile-menu">
                 <div class="flex flex-col space-y-3">
@@ -474,26 +494,78 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20 pb-10 px-6">
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20 pb-10 px-6 relative">
+        <!-- Vertical Text on Left Side -->
+        <div class="flex-item absolute left-0 top-1/2 transform -translate-y-1/2 hidden md:block">
+            <div class="flex flex-col items-center space-y-4">
+                <div class="transform -rotate-90 origin-center">
+                    <span class="text-lg font-bold text-gray-800 tracking-wider whitespace-nowrap">OUTFIT OF THE WEEK</span>
+                </div>
+            </div>
+        </div>
+        
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 flex justify-center items-center gap-4 slide-up md:mt-2 mt-12 ">
+                <div class="mt-12 md:ml-16  md:w-1/2 flex justify-center items-center gap-4 slide-up md:mt-2">
                     <div class="relative">
                         <div class="w-64 h-64 md:w-80 md:h-80 bg-[#59CE8F] rounded-full absolute -z-10 top-4 left-4 floating opacity-70"></div>
                         <div class="w-48 h-48 md:w-64 md:h-64 bg-[#FF1E00] rounded-full absolute -z-10 -bottom-6 -right-6 floating opacity-50" style="animation-delay: 1.5s;"></div>
                          <img src="Images/1.jpg" 
                              alt="Jo posing in Miami" 
-                             class="w-64 h-64 md:w-64 md:h-96 object-cover rounded-2xl shadow-2xl border-4 border-white hero-image-main image-glow pulse-border">  
+                             class="w-64 h-80 md:w-64 md:h-96 object-cover rounded-2xl shadow-2xl border-4 border-white hero-image-main image-glow pulse-border">  
                     </div>
                     <img src="Images/2.jpg" 
                              alt="Jo posing in Miami" 
-                             class="w-56 h-56 md:w-56 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-white hero-image-secondary image-glow ml-4">
+                             class="mt=w-56 h-64 md:w-56 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-white hero-image-secondary image-glow ml-4">
                 </div>
-                <div class="md:w-1/2 mb-10 md:mb-0 fade-in text-center md:text-left md:mt-2 mt-12">
-                    <h1 class="great-vibes text-4xl md:text-7xl text-[#FF1E00] mb-6">Hey, I'm Joanne!</h1>
-                    <h2 class="montserrat-bold text-1xl md:text-3xl mb-6">Miami-based content creator and style curator.</h2>
-                    <p class="text-md md:text-lg mb-8">Discover bold fashion, viral finds, and good vibes.</p>
-                    <a href="#gallery" class="btn-primary text-white px-8 py-3 rounded-full inline-block">Shop My Looks</a>
+                
+                
+                <!-- Current Favorites Section -->
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in md:mt-2 md:pl-8 relative mt-8">
+                    <div class="p-6 md:p-6 px-4 py-8">
+                        <div class=" mb-4 flex-item">
+                            <div class="md:flex md:justify-between md:items-center mb-4">
+                                <h3 class="text-md text-white tracking-wider md:block hidden">SHOP</h3>
+                                <div class="md:hidden flex justify-start mb-2">
+                                    <h3 class="text-xl text-white tracking-wider">SHOP</h3>
+                                </div>
+                                <h2 class="md:text-2xl text-5xl font-bold text-white">CURRENT FAVORITES</h2>
+                            </div>
+                        </div>
+                        
+                        <!-- 2x3 Grid of Images -->
+                        <div class="grid md:grid-cols-4 grid-cols-2 gap-4 md:gap-8 mb-4">
+                            <div class="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group ">
+                                <img src="Images/1.jpg" alt="Favorite 1" class="w-full h-32 md:h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group ">
+                                <img src="Images/2.jpg" alt="Favorite 2" class="w-full h-32 md:h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group ">
+                                <img src="Images/jo3.jpg" alt="Favorite 3" class="w-full h-32 md:h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group ">
+                                <img src="Images/jo4.jpg" alt="Favorite 4" class="w-full h-32 md:h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group hidden md:block">
+                                <img src="Images/jo5.jpg" alt="Favorite 5" class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="bg-white  shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group hidden md:block">
+                                <img src="Images/ltk1.jpg" alt="Favorite 6" class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group hidden md:block">
+                                <img src="Images/model1.jpg" alt="Favorite 6" class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group hidden md:block">
+                                <img src="Images/jo6.jpg" alt="Favorite 6" class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                        </div>
+                        
+                        <!-- Shop My Looks Button -->
+                        <a href="#gallery" class="alura mt-8 bg-gray-800 hover:from-pink-600 hover:to-orange-600 text-white px-6 py-3 text-center block font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                            SHOP MY LOOKS →
+                        </a>
+                    </div>
                 </div>
                 
             </div>
@@ -503,7 +575,7 @@
     <!-- About Section -->
     <section id="about" class="about-gradient py-20 px-6">
         <div class="container mx-auto">
-            <h2 class="great-vibes text-4xl md:text-6xl text-center text-[#FF1E00] mb-16 fade-in">Who is Joanne Jones?</h2>
+            <h2 class="great-vibes text-4xl md:text-6xl text-center text-[black] mb-16 fade-in">Who is Joanne Jones?</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 slide-up">
                     <div class="relative md:ml-32">
@@ -555,67 +627,116 @@
     <!-- Gallery Section -->
     <section id="gallery" class="gallery-gradient py-20 px-6">
         <div class="container mx-auto">
-            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[#FF1E00] mb-4 fade-in">My Collections</h2>
-            <p class="text-center mb-12 max-w-2xl mx-auto">Curated fashion finds for every style and budget</p>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- LTK Finds -->
-                <div class="gallery-item group relative bg-gradient-to-br from-pink-50 to-orange-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 slide-up border border-pink-100">
-                    <div class="relative overflow-hidden">
-                        <img src="Images/prod11.jpg" 
-                             alt="Sunset Linen Look" 
-                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 left-4 bg-gradient-to-r from-pink-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                            💖 LTK FIND
+            <!-- Two Column Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- LTK Column -->
+                <div class="text-center">
+                    <div class="mb-8">
+                        <p class="md:text-sm text-3xl font-semibold text-gray-600 mb-2">MY FAVORITES</p>
+                        <h2 class="great-vibes text-6xl md:text-4xl montserrat-bold text-gray-900">LTK</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- LTK Item 1 -->
+                        <div class="bg-white border-2 border-gray-300 p-4">
+                            <div class="relative overflow-hidden border-4 border-white mb-4">
+                                <img src="Images/prod11.jpg" 
+                                     alt="Silver Platforms" 
+                                     class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                            </div>
+                            <p class="text-sm text-gray-700 font-medium">Product 01</p>
                         </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        <!-- LTK Item 2 -->
+                        <div class="bg-white border-2 border-gray-300 p-4">
+                            <div class="relative overflow-hidden border-4 border-white mb-4">
+                                <img src="Images/lkt2.jpg" 
+                                     alt="Zebra Sunnies" 
+                                     class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                            </div>
+                            <p class="text-sm text-gray-700 font-medium"> Product 02 </p>
+                        </div>
+                        
+                        <!-- LTK Item 3 -->
+                        <div class="bg-white border-2 border-gray-300 p-4">
+                            <div class="relative overflow-hidden border-4 border-white mb-4">
+                                <img src="Images/ltk1.jpg" 
+                                     alt="Woven Handbag" 
+                                     class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                            </div>
+                            <p class="text-sm text-gray-700 font-medium">Product 03</p>
+                        </div>
+                        
+                        <!-- LTK Item 4 -->
+                        <div class="bg-white border-2 border-gray-300 p-4">
+                            <div class="relative overflow-hidden border-4 border-white mb-4">
+                                <img src="Images/jo3.jpg" 
+                                     alt="Flower Set" 
+                                     class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                            </div>
+                            <p class="text-sm text-gray-700 font-medium">Product 04</p>
+                        </div>
                     </div>
-                    <div class="p-6 relative">
-                        <div class="absolute -top-3 right-6 w-6 h-6 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full shadow-lg"></div>
-                        <h3 class="montserrat-bold text-xl mb-3 text-gray-800 group-hover:text-pink-600 transition-colors duration-300">✨ Activewear</h3>
-                        <p class="mb-4 text-gray-600 leading-relaxed">Date night dress perfection! <br><span class="text-pink-500 font-semibold">#LTKFindsUnder100 #LTKActive</span></p>
-                        <a href="https://www.shopltk.com/explore/Theycallme_jo_/posts/e4f1e704-3f71-11f0-afc6-0242ac110012" class="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600 text-white px-6 py-3 rounded-full inline-block text-sm font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">🛍️ Shop on LTK</a>
-                    </div>
+                    
+                    <a href="https://www.shopltk.com/explore/Theycallme_jo_?utm_campaign=creator_shop_share_template_flow&utm_source=ioscreatorapp&fbclid=PAZXh0bgNhZW0CMTEAAadJip_1cgnW43Mwac42KKmDZwURzA_s-dl24M9Fn-A5Y7gxHduVrT7Mxlnb9g_aem_MnXCeeXV0uJUcpup5ZR-0Q" target="_blank" class="inline-block mt-8 bg-gray-800 text-white px-8 py-3 text-sm font-semibold hover:bg-gray-700 transition-colors duration-300 text-decoration-none">
+                        SHOP LTK STOREFRONT →
+                    </a>
                 </div>
                 
-                <!-- Amazon Picks -->
-                <div class="gallery-item group relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 slide-up border border-blue-100">
-                    <div class="relative overflow-hidden">
-                        <img src="https://m.media-amazon.com/images/I/31XmGV8qa0L._AC_.jpg" 
-                             alt="Amazon Dress" 
-                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                            📦 AMAZON
+                <!-- Amazon Column -->
+                <div class="text-center">
+                    <div class="mb-8">
+                        <p class="md:text-sm text-3xl font-semibold text-gray-600 mb-2">THIS WEEK ON</p>
+                        <h2 class="md:text-4xl text-5xl montserrat-bold text-gray-900">AMAZON</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Amazon Item 1 -->
+                        <div class="bg-white border-2 border-gray-300 p-4">
+                            <div class="relative overflow-hidden border-4 border-white mb-4">
+                                <img src="https://m.media-amazon.com/images/I/31XmGV8qa0L._AC_.jpg" 
+                                     alt="Trendy Queen Dress" 
+                                     class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                            </div>
+                            <p class="text-sm text-gray-700 font-medium">Product 01</p>
                         </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="p-6 relative">
-                        <div class="absolute -top-3 right-6 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg"></div>
-                        <h3 class="montserrat-bold text-xl mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">👑 Trendy Queen</h3>
-                        <p class="mb-4 text-gray-600 leading-relaxed">Under <span class="text-green-600 font-bold">$23.99</span> Trendy Queen Womens Mini Summer Dresses 2025 Going.</p>
-                        <a href="#" class="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-6 py-3 rounded-full inline-block text-sm font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">🛒 Shop on Amazon</a>
-                    </div>
-                </div>
-
-                <!-- LTK Finds -->
-                <div class="gallery-item group relative bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 slide-up border border-rose-100">
-                    <div class="relative overflow-hidden">
-                        <img src="Images/lkt2.jpg" 
-                             alt="Sunset Linen Look" 
-                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700">
-                        <div class="absolute top-4 left-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                            💡 STYLE TIP
+                        
+                        <!-- Amazon Item 2 -->
+                        <div class="bg-white border-2 border-gray-300 p-4">
+                            <div class="relative overflow-hidden border-4 border-white mb-4">
+                                <img src="Images/jo4.jpg" 
+                                     alt="Woven Handbag" 
+                                     class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                            </div>
+                            <p class="text-sm text-gray-700 font-medium">Product 02</p>
                         </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        <!-- Amazon Item 3 -->
+                        <div class="bg-white border-2 border-gray-300 p-4">
+                            <div class="relative overflow-hidden border-4 border-white mb-4">
+                                <img src="Images/jo5.jpg" 
+                                     alt="Watercolor Mesh" 
+                                     class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                            </div>
+                            <p class="text-sm text-gray-700 font-medium">Product 03</p>
+                        </div>
+                        
+                        <!-- Amazon Item 4 -->
+                        <div class="bg-white border-2 border-gray-300 p-4">
+                            <div class="relative overflow-hidden border-4 border-white mb-4">
+                                <img src="Images/jo6.jpg" 
+                                     alt="Summer Essentials" 
+                                     class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                            </div>
+                            <p class="text-sm text-gray-700 font-medium">Product 04</p>
+                        </div>
                     </div>
-                    <div class="p-6 relative">
-                        <div class="absolute -top-3 right-6 w-6 h-6 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full shadow-lg"></div>
-                        <h3 class="montserrat-bold text-xl mb-3 text-gray-800 group-hover:text-rose-600 transition-colors duration-300">💫 LTKStyleTip</h3>
-                        <p class="mb-4 text-gray-600 leading-relaxed">This was actually a size medium! <br><span class="text-rose-500 font-semibold">#LTKFindsUnder50 #LTKFindsUnder100</span></p>
-                        <a href="https://www.shopltk.com/explore/Theycallme_jo_/posts/e70825b8-5ffd-11f0-b7a9-0242ac11000d" class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-6 py-3 rounded-full inline-block text-sm font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">✨ Shop on LTK</a>
-                    </div>
+                    
+                    <a href="https://www.amazon.com/shop/theycallme_jo_?fbclid=PAZXh0bgNhZW0CMTEAAacGCDUl62gFpUm51TStqLBh8qhF2tVmxo8RWp00CsRQ5n7BKh4lvieVZpcX6w_aem_cqtSbxsLFcbZPp6VT0t9kQ" target="_blank" class="inline-block mt-8 bg-gray-800 text-white px-8 py-3 text-sm font-semibold hover:bg-gray-700 transition-colors duration-300 text-decoration-none">
+                        SHOP AMAZON STOREFRONT →
+                    </a>
                 </div>
-                
                 
             </div>
         </div>
@@ -626,7 +747,7 @@
     <!-- Style Models Section -->
     <section id="style-models" class="style-models-gradient py-20 px-6">
         <div class="container mx-auto">
-            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[#FF1E00] mb-4 fade-in">Style Models</h2>
+            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[black] mb-4 fade-in">Style Models</h2>
             <p class="text-center mb-12 max-w-2xl mx-auto">Devoted wife & loving mother Grateful to be able to balance family life with my passion for fashion and good affordable finds. A true style enthusiast</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -802,7 +923,7 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials-gradient py-20 px-6">
         <div class="container mx-auto">
-            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[#FF1E00] mb-16 fade-in">Love from Followers</h2>
+            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[black] mb-16 fade-in">Love from Followers</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
