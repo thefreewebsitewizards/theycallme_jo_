@@ -333,10 +333,7 @@
         }
 
         .counter {
-            background: linear-gradient(45deg, #FF1E00, #FF6B35);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: black !important;
         }
 
         .about-content {
@@ -447,11 +444,141 @@
             transform: scale(1.1);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
+        
+        /* Custom styles for shop buttons */
+        .shop-button {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .shop-button:hover {
+            background-color: #92400e !important;
+            color: #fcd34d !important;
+            border-color: #fcd34d !important;
+        }
+        
+        /* Mobile Navigation Animations */
+        #mobile-menu {
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        #mobile-menu:not(.hidden) {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .mobile-nav-item {
+            transform: translateX(-30px);
+            opacity: 0;
+            animation: slideInFromLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Enhanced hover effects for mobile nav */
+        .mobile-nav-item:hover {
+            transform: translateX(5px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Smooth icon rotation on hover */
+        .mobile-nav-item:hover i {
+            transform: rotate(12deg) scale(1.1);
+        }
+        
+        /* Mobile menu container animation */
+        .mobile-menu-container {
+            animation: fadeInScale 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes fadeInScale {
+            0% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Hamburger menu animation */
+        .hamburger-line {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
     </style>
 </head>
 <body class="montserrat-regular text-black">
-    <!-- Navbar -->
-    <nav class="fixed w-full bg-white bg-opacity-90 z-50 shadow-sm">
+    <!-- Top Shopping Navbar -->
+    <nav class="fixed w-full bg-black z-[60] shadow-lg top-0 hidden md:block">
+        <div class="container mx-auto px-6 py-2">
+            <div class="flex items-center justify-between">
+                <!-- Social Media Icons -->
+                <div class="flex items-center gap-3">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/theycallme_jo_/" target="_blank" class="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-pink-500 transition-all duration-300 group">
+                        <i class="fab fa-instagram text-black text-sm group-hover:text-white transition-colors duration-300"></i>
+                    </a>
+                    
+                    <!-- Facebook -->
+                    <a href="#" target="_blank" class="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 group">
+                        <i class="fab fa-facebook-f text-black text-sm group-hover:text-white transition-colors duration-300"></i>
+                    </a>
+                    
+                    <!-- Amazon -->
+                    <a href="https://www.amazon.com/shop/theycallme_jo_" target="_blank" class="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 group">
+                        <i class="fab fa-amazon text-black text-sm group-hover:text-white transition-colors duration-300"></i>
+                    </a>
+                    
+                    <!-- LTK -->
+                    <a href="https://www.shopltk.com/explore/Theycallme_jo_" target="_blank" class="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-red-500 transition-all duration-300 group">
+                        <i class="fas fa-heart text-black text-sm group-hover:text-white transition-colors duration-300"></i>
+                    </a>
+                    
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@theycallme_jo_" target="_blank" class="w-8 h-8 bg-white rounded-full flex items-center justify-center hover:bg-black transition-all duration-300 group">
+                        <i class="fab fa-tiktok text-black text-sm group-hover:text-white transition-colors duration-300"></i>
+                    </a>
+                </div>
+                
+                <!-- Shop Buttons -->
+                <div class="flex items-center gap-4">
+                    <a href="https://www.shopltk.com/explore/Theycallme_jo_?utm_campaign=creator_shop_share_template_flow&utm_source=ioscreatorapp&fbclid=PAZXh0bgNhZW0CMTEAAadJip_1cgnW43Mwac42KKmDZwURzA_s-dl24M9Fn-A5Y7gxHduVrT7Mxlnb9g_aem_MnXCeeXV0uJUcpup5ZR-0Q" target="_blank" class="shop-button bg-white text-amber-800 font-semibold px-4 py-1 text-sm rounded border border-amber-800 transition-all duration-300 hover:bg-amber-800 hover:text-white hover:border-amber-900 transform hover:scale-105 text-decoration-none">
+                        Shop LTK
+                    </a>
+                    <a href="https://www.amazon.com/shop/theycallme_jo_?fbclid=PAZXh0bgNhZW0CMTEAAacGCDUl62gFpUm51TStqLBh8qhF2tVmxo8RWp00CsRQ5n7BKh4lvieVZpcX6w_aem_cqtSbxsLFcbZPp6VT0t9kQ" target="_blank" class="shop-button bg-amber-800 text-white font-semibold px-4 py-1 text-sm rounded border border-amber-900 transition-all duration-300 hover:bg-white hover:text-amber-800 hover:border-amber-800 transform hover:scale-105 text-decoration-none">
+                        Shop Amazon
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Original Navbar -->
+    <nav class="fixed w-full bg-white bg-opacity-90 z-50 shadow-sm top-0 md:top-[45px]">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex-1"></div>
@@ -459,47 +586,51 @@
                     <a href="#" class="great-vibes text-4xl md:text-5xl text-[black]">J</a><span class="text-2xl md:text-3xl text-[black]" style="font-family: anton;">oanne</span>  <a href="#" class="great-vibes text-4xl md:text-5xl text-[black]">J</a><span class="text-2xl md:text-3xl text-[black]" style="font-family: anton;">ones </span>
                 </div>
                 <div class="flex-1 flex justify-end">
-                    <button class="md:hidden focus:outline-none" id="mobile-menu-button">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                    <button class="md:hidden focus:outline-none p-2" id="mobile-menu-button">
+                        <div class="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+                            <div class="hamburger-line w-6 h-0.5 bg-black"></div>
+                            <div class="hamburger-line w-6 h-0.5 bg-black"></div>
+                            <div class="hamburger-line w-6 h-0.5 bg-black"></div>
+                        </div>
                     </button>
                 </div>
             </div>
-            <div class="md:hidden hidden mt-4" id="mobile-menu">
-                <div class="flex flex-col space-y-3">
-                <a href="#home" class="flex items-center justify-center gap-2 hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">
-                    <i class="fas fa-house"></i>
-                    Home
-                </a>
-                <a href="#about" class="flex items-center justify-center gap-2 hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">
-                    <i class="fas fa-user"></i>
-                    About
-                </a>
-                <a href="#gallery" class="flex items-center justify-center gap-2 hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">
-                    <i class="fas fa-image"></i>
-                    Gallery
-                </a>
-                <a href="#testimonials" class="flex items-center justify-center gap-2 hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">
-                    <i class="fas fa-comments"></i>
-                    Testimonials
-                </a>
-                <a href="#connect" class="flex items-center justify-center gap-2 hover:text-[#FF1E00] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-3 py-2 rounded-lg hover:bg-gray-50">
-                    <i class="fas fa-envelope"></i>
-                    Connect
-                </a>
+            <div class="md:hidden hidden mt-4 overflow-hidden" id="mobile-menu">
+                <div class="mobile-menu-container bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-xl shadow-2xl border border-gray-200 p-4 backdrop-blur-sm">
+                    <div class="flex flex-col space-y-3">
+                        <a href="#home" class="mobile-nav-item flex items-center justify-center gap-3 hover:text-[#FF1E00] hover:scale-105 hover:shadow-xl transition-all duration-500 ease-out px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-white border border-transparent hover:border-gray-200 group" style="animation-delay: 0.1s">
+                            <i class="fas fa-house text-lg group-hover:rotate-12 transition-transform duration-300"></i>
+                            <span class="font-medium">Home</span>
+                        </a>
+                        <a href="#about" class="mobile-nav-item flex items-center justify-center gap-3 hover:text-[#FF1E00] hover:scale-105 hover:shadow-xl transition-all duration-500 ease-out px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-white border border-transparent hover:border-gray-200 group" style="animation-delay: 0.2s">
+                            <i class="fas fa-user text-lg group-hover:rotate-12 transition-transform duration-300"></i>
+                            <span class="font-medium">About</span>
+                        </a>
+                        <a href="#gallery" class="mobile-nav-item flex items-center justify-center gap-3 hover:text-[#FF1E00] hover:scale-105 hover:shadow-xl transition-all duration-500 ease-out px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-white border border-transparent hover:border-gray-200 group" style="animation-delay: 0.3s">
+                            <i class="fas fa-image text-lg group-hover:rotate-12 transition-transform duration-300"></i>
+                            <span class="font-medium">Gallery</span>
+                        </a>
+                        <a href="#testimonials" class="mobile-nav-item flex items-center justify-center gap-3 hover:text-[#FF1E00] hover:scale-105 hover:shadow-xl transition-all duration-500 ease-out px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-white border border-transparent hover:border-gray-200 group" style="animation-delay: 0.4s">
+                            <i class="fas fa-comments text-lg group-hover:rotate-12 transition-transform duration-300"></i>
+                            <span class="font-medium">Testimonials</span>
+                        </a>
+                        <a href="#connect" class="mobile-nav-item flex items-center justify-center gap-3 hover:text-[#FF1E00] hover:scale-105 hover:shadow-xl transition-all duration-500 ease-out px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-white border border-transparent hover:border-gray-200 group" style="animation-delay: 0.5s">
+                            <i class="fas fa-envelope text-lg group-hover:rotate-12 transition-transform duration-300"></i>
+                            <span class="font-medium">Connect</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20 pb-10 px-6 relative">
+    <section id="home" class="hero-gradient min-h-screen flex items-center pb-10 px-6 relative pt-20 md:pt-[120px]">
         <!-- Vertical Text on Left Side -->
         <div class="flex-item absolute left-0 top-1/2 transform -translate-y-1/2 hidden md:block">
             <div class="flex flex-col items-center space-y-4">
                 <div class="transform -rotate-90 origin-center">
-                    <span class="text-lg font-bold text-gray-800 tracking-wider whitespace-nowrap">OUTFIT OF THE WEEK</span>
+                    <span class="text-xl font-bold text-blacktracking-wider whitespace-nowrap">OUTFIT OF THE WEEK</span>
                 </div>
             </div>
         </div>
@@ -562,7 +693,7 @@
                         </div>
                         
                         <!-- Shop My Looks Button -->
-                        <a href="#gallery" class="alura mt-8 bg-gray-800 hover:from-pink-600 hover:to-orange-600 text-white px-6 py-3 text-center block font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                        <a href="#gallery" class="alura mt-8 bg-amber-800 hover:bg-white text-white hover:text-amber-800 border border-amber-900 hover:border-amber-800 px-6 py-3 text-center block font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                             SHOP MY LOOKS →
                         </a>
                     </div>
@@ -575,11 +706,11 @@
     <!-- About Section -->
     <section id="about" class="about-gradient py-20 px-6">
         <div class="container mx-auto">
-            <h2 class="great-vibes text-4xl md:text-6xl text-center text-[black] mb-16 fade-in">Who is Joanne Jones?</h2>
+            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[black] mb-16 fade-in">Who is Joanne Jones?</h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 slide-up">
                     <div class="relative md:ml-32">
-                        <div class="w-64 h-96 md:w-96 md:h-96 bg-[#FF1E00] rounded-lg absolute -z-10 top-4 left-4 floating"></div>
+                        <div class="w-64 h-96 md:w-96 md:h-96 bg-amber-400 rounded-lg absolute -z-10 top-4 left-4 floating"></div>
                         <img src="Images/jo6.jpg" 
                              alt="Jo styling outfits" 
                              class="w-64 h-96 md:w-96 md:h-96 object-cover rounded-lg border-4 border-white shadow-xl">
@@ -595,28 +726,28 @@
                     
                     <!-- Enhanced Text Content -->
                     <div class="about-text-container">
-                        <p class="text-lg mb-6 about-intro slide-in-text text-justify">I'm <span class="text-[#FF1E00] font-bold">Jo</span> — a Miami-based fashion girlie with a love for <span class="highlight-text">TikTok trends</span>, <span class="highlight-text">Amazon steals</span>, and <span class="highlight-text">classic glam</span>.</p>
+                        <p class="text-lg mb-6 about-intro slide-in-text text-black text-justify">I'm <span class="text-black font-bold">Jo</span> — a Miami-based fashion girlie with a love for <span class="text-black font-semibold">TikTok trends</span>, <span class="text-black font-semibold">Amazon steals</span>, and <span class="text-black font-semibold">classic glam</span>.</p>
                         
                         <p class="text-lg mb-6 about-description slide-in-text delay-1 text-justify">I mix <em>laughs with luxe</em>, curating pieces that fit your vibe and your budget. Whether it's high-end designer dupes or thrift store treasures, I've got an eye for style that turns heads without breaking the bank.</p>
                         
-                        <p class="text-lg mb-8 about-mission slide-in-text delay-2 text-justify">My content is all about making fashion <strong class="text-[#FF1E00]">accessible</strong>, <strong class="text-[#FF1E00]">fun</strong>, and <strong class="text-[#FF1E00]">unapologetically bold</strong>. From beachside bikinis to downtown dinner looks, I'll show you how to rock every occasion with confidence.</p>
+                        <p class="text-lg mb-8 about-mission slide-in-text delay-2 text-justify">My content is all about making fashion <strong class="text-black ">accessible</strong>, <strong class="text-black ">fun</strong>, and <strong class="text-black ">unapologetically bold</strong>. From beachside bikinis to downtown dinner looks, I'll show you how to rock every occasion with confidence.</p>
                     </div>
                     
                     
                     
                     <!-- Social Stats -->
-                    <div class="mt-8 flex flex-wrap gap-6 about-stats">
-                        <div class="stat-item text-center">
-                            <div class="text-2xl font-bold text-[#FF1E00] counter" data-target="50">7,906</div>
-                            <div class="text-sm text-gray-600">K+ Followers</div>
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 about-stats">
+                        <div class="stat-item text-center bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                            <div class="text-2xl sm:text-3xl font-bold text-black counter" data-target="50">7,906</div>
+                            <div class="text-sm sm:text-base text-gray-700 font-medium">K+ Followers</div>
                         </div>
-                        <div class="stat-item text-center">
-                            <div class="text-2xl font-bold text-[#FF1E00] counter" data-target="1000">500</div>
-                            <div class="text-sm text-gray-600">+ Outfits Styled</div>
+                        <div class="stat-item text-center bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                            <div class="text-2xl sm:text-3xl font-bold text-black counter" data-target="1000">500</div>
+                            <div class="text-sm sm:text-base text-gray-700 font-medium">+ Outfits Styled</div>
                         </div>
-                        <div class="stat-item text-center">
-                            <div class="text-2xl font-bold text-[#FF1E00] counter" data-target="95">100%</div>
-                            <div class="text-sm text-gray-600">% Happy Clients</div>
+                        <div class="stat-item text-center bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                            <div class="text-2xl sm:text-3xl font-bold text-black counter" data-target="95">100%</div>
+                            <div class="text-sm sm:text-base text-gray-700 font-medium">% Happy Clients</div>
                         </div>
                     </div>
                 </div>
@@ -639,7 +770,7 @@
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <!-- LTK Item 1 -->
-                        <div class="bg-white border-2 border-gray-300 p-4">
+                        <div class="bg-white border-2 border-black p-4">
                             <div class="relative overflow-hidden border-4 border-white mb-4">
                                 <img src="Images/prod11.jpg" 
                                      alt="Silver Platforms" 
@@ -649,7 +780,7 @@
                         </div>
                         
                         <!-- LTK Item 2 -->
-                        <div class="bg-white border-2 border-gray-300 p-4">
+                        <div class="bg-white border-2 border-black p-4">
                             <div class="relative overflow-hidden border-4 border-white mb-4">
                                 <img src="Images/lkt2.jpg" 
                                      alt="Zebra Sunnies" 
@@ -659,7 +790,7 @@
                         </div>
                         
                         <!-- LTK Item 3 -->
-                        <div class="bg-white border-2 border-gray-300 p-4">
+                        <div class="bg-white border-2 border-black p-4">
                             <div class="relative overflow-hidden border-4 border-white mb-4">
                                 <img src="Images/ltk1.jpg" 
                                      alt="Woven Handbag" 
@@ -669,7 +800,7 @@
                         </div>
                         
                         <!-- LTK Item 4 -->
-                        <div class="bg-white border-2 border-gray-300 p-4">
+                        <div class="bg-white border-2 border-black p-4">
                             <div class="relative overflow-hidden border-4 border-white mb-4">
                                 <img src="Images/jo3.jpg" 
                                      alt="Flower Set" 
@@ -679,10 +810,13 @@
                         </div>
                     </div>
                     
-                    <a href="https://www.shopltk.com/explore/Theycallme_jo_?utm_campaign=creator_shop_share_template_flow&utm_source=ioscreatorapp&fbclid=PAZXh0bgNhZW0CMTEAAadJip_1cgnW43Mwac42KKmDZwURzA_s-dl24M9Fn-A5Y7gxHduVrT7Mxlnb9g_aem_MnXCeeXV0uJUcpup5ZR-0Q" target="_blank" class="inline-block mt-8 bg-gray-800 text-white px-8 py-3 text-sm font-semibold hover:bg-gray-700 transition-colors duration-300 text-decoration-none">
+                    <a href="https://www.shopltk.com/explore/Theycallme_jo_?utm_campaign=creator_shop_share_template_flow&utm_source=ioscreatorapp&fbclid=PAZXh0bgNhZW0CMTEAAadJip_1cgnW43Mwac42KKmDZwURzA_s-dl24M9Fn-A5Y7gxHduVrT7Mxlnb9g_aem_MnXCeeXV0uJUcpup5ZR-0Q" target="_blank" class="inline-block mt-8 bg-white text-amber-800 border border-amber-800 px-8 py-3 text-sm font-semibold hover:bg-amber-800 hover:text-white transition-colors duration-300 text-decoration-none">
                         SHOP LTK STOREFRONT →
                     </a>
                 </div>
+
+                <!-- Vertical divider line for desktop -->
+                        <div class="hidden sm:block absolute left-1/2 top-0 bottom-0 w-px bg-black transform -translate-x-1/2"></div>
                 
                 <!-- Amazon Column -->
                 <div class="text-center">
@@ -693,7 +827,7 @@
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <!-- Amazon Item 1 -->
-                        <div class="bg-white border-2 border-gray-300 p-4">
+                        <div class="bg-white border-2 border-black p-4">
                             <div class="relative overflow-hidden border-4 border-white mb-4">
                                 <img src="https://m.media-amazon.com/images/I/31XmGV8qa0L._AC_.jpg" 
                                      alt="Trendy Queen Dress" 
@@ -703,7 +837,7 @@
                         </div>
                         
                         <!-- Amazon Item 2 -->
-                        <div class="bg-white border-2 border-gray-300 p-4">
+                        <div class="bg-white border-2 border-black p-4">
                             <div class="relative overflow-hidden border-4 border-white mb-4">
                                 <img src="Images/jo4.jpg" 
                                      alt="Woven Handbag" 
@@ -713,7 +847,7 @@
                         </div>
                         
                         <!-- Amazon Item 3 -->
-                        <div class="bg-white border-2 border-gray-300 p-4">
+                        <div class="bg-white border-2 border-black p-4">
                             <div class="relative overflow-hidden border-4 border-white mb-4">
                                 <img src="Images/jo5.jpg" 
                                      alt="Watercolor Mesh" 
@@ -723,7 +857,7 @@
                         </div>
                         
                         <!-- Amazon Item 4 -->
-                        <div class="bg-white border-2 border-gray-300 p-4">
+                        <div class="bg-white border-2 border-black p-4">
                             <div class="relative overflow-hidden border-4 border-white mb-4">
                                 <img src="Images/jo6.jpg" 
                                      alt="Summer Essentials" 
@@ -733,7 +867,7 @@
                         </div>
                     </div>
                     
-                    <a href="https://www.amazon.com/shop/theycallme_jo_?fbclid=PAZXh0bgNhZW0CMTEAAacGCDUl62gFpUm51TStqLBh8qhF2tVmxo8RWp00CsRQ5n7BKh4lvieVZpcX6w_aem_cqtSbxsLFcbZPp6VT0t9kQ" target="_blank" class="inline-block mt-8 bg-gray-800 text-white px-8 py-3 text-sm font-semibold hover:bg-gray-700 transition-colors duration-300 text-decoration-none">
+                    <a href="https://www.amazon.com/shop/theycallme_jo_?fbclid=PAZXh0bgNhZW0CMTEAAacGCDUl62gFpUm51TStqLBh8qhF2tVmxo8RWp00CsRQ5n7BKh4lvieVZpcX6w_aem_cqtSbxsLFcbZPp6VT0t9kQ" target="_blank" class="inline-block mt-8 bg-amber-800 text-white border border-amber-900 px-8 py-3 text-sm font-semibold hover:bg-white hover:text-amber-800 hover:border-amber-800 transition-colors duration-300 text-decoration-none">
                         SHOP AMAZON STOREFRONT →
                     </a>
                 </div>
@@ -747,7 +881,7 @@
     <!-- Style Models Section -->
     <section id="style-models" class="style-models-gradient py-20 px-6">
         <div class="container mx-auto">
-            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[black] mb-4 fade-in">Style Models</h2>
+            <h2 class="great-vibes text-5xl md:text-6xl text-center text-[black] mb-4 fade-in">Shop Recent Looks</h2>
             <p class="text-center mb-12 max-w-2xl mx-auto">Devoted wife & loving mother Grateful to be able to balance family life with my passion for fashion and good affordable finds. A true style enthusiast</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -837,8 +971,10 @@
 
 
             </div>
+            
 
-            <div class="overflow-x-auto pb-12 mt-12">
+            <h2 class="pt-12 great-vibes text-5xl md:text-6xl text-center text-[black] mb-8 fade-in">Featured Videos</h2>
+            <div class="overflow-x-auto pb-2">
                     <div class="flex space-x-4 sm:space-x-8 w-max px-4">
                         <!-- Video 1 -->
                         <div class="w-56 sm:w-72 flex-shrink-0 video-card">
@@ -971,10 +1107,10 @@
     
 
     <!-- Connect Section -->
-    <section id="connect" class="connect-gradient py-10 px-6">
+    <section id="connect" class=" py-10 px-6">
         <div class="container mx-auto">
-            <h2 class="great-vibes text-4xl md:text-5xl text-center text-white mb-4 fade-in">Let's Connect & Collab</h2>
-            <p class="text-center text-white mb-12 max-w-2xl mx-auto">Follow for daily style inspiration, behind-the-scenes, and exclusive deals</p>
+            <h2 class="great-vibes text-4xl md:text-5xl text-center text-black mb-4 fade-in">Let's Connect & Collab</h2>
+            <p class="text-center text-black mb-12 max-w-2xl mx-auto">Follow for daily style inspiration, behind-the-scenes, and exclusive deals</p>
             
             <div class="flex justify-center space-x-4 md:space-x-8 mb-2 fade-in">
                <!-- Instagram -->
@@ -982,7 +1118,7 @@
                             class="bg-white w-12 h-12 rounded-full flex items-center justify-center glow-hover 
                                     hover:bg-gradient-to-r hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 
                                     transition-all duration-300 group">
-                            <svg class="w-6 h-6 text-[#FF1E00] group-hover:text-white transition-colors duration-300" 
+                            <svg class="w-6 h-6 text-black group-hover:text-white transition-colors duration-300" 
                                 fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 
                                         3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 
@@ -1007,7 +1143,7 @@
                             </a>
                 <!-- Facebook -->
                 <a href="https://www.facebook.com/profile.php?id=2064897&ref=_ig_profile_ac" class="bg-white w-12 h-12 rounded-full flex items-center justify-center glow-hover hover:bg-[#1877F2] hover:text-white transition-all duration-300 group">
-                    <svg class="w-6 h-6 text-[#FF1E00] group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-6 h-6 text-black group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                     </svg>
                 </a>
@@ -1015,20 +1151,20 @@
                 <a href="https://www.amazon.com/shop/theycallme_jo_?fbclid=PAZXh0bgNhZW0CMTEAAadndRDgt_PwHnq0CBmyarl1O-_l1iz_dHfKYEUatHr1xGsMwefj6rvJglgjIA_aem_6JK4D4XuPxkm_3LNYDcdxQ" 
                     class="bg-white w-12 h-12 rounded-full flex items-center justify-center glow-hover 
                             hover:bg-[#FF9900] hover:text-white transition-all duration-300 group">
-                    <i class="fab fa-amazon text-[#FF1E00] text-xl group-hover:text-white transition-colors duration-300"></i>
+                    <i class="fab fa-amazon text-black text-xl group-hover:text-white transition-colors duration-300"></i>
                     </a>
                 <!-- LTK (Like to Know It) -->
                <a href="https://www.shopltk.com/explore/Theycallme_jo_?tab=posts" 
                     class="bg-white w-12 h-12 rounded-full flex items-center justify-center glow-hover 
                             hover:bg-black hover:text-white transition-all duration-300 group">
-                    <i class="fas fa-heart text-[#FF1E00] text-xl group-hover:text-white transition-colors duration-300"></i>
+                    <i class="fas fa-heart text-black text-xl group-hover:text-white transition-colors duration-300"></i>
                  </a>
 
               <!-- Tiktok -->
                  <a href="https://www.tiktok.com/@theycallme_jo_" 
                     class="bg-white w-12 h-12 rounded-full flex items-center justify-center glow-hover 
                             hover:bg-black hover:text-white transition-all duration-300 group">
-                    <i class="fab fa-tiktok text-[#FF1E00] text-xl group-hover:text-white transition-colors duration-300"></i>
+                    <i class="fab fa-tiktok text-black text-xl group-hover:text-white transition-colors duration-300"></i>
                     </a>
             </div>
             
@@ -1051,7 +1187,22 @@
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-button');
+            
             menu.classList.toggle('hidden');
+            button.classList.toggle('hamburger-active');
+            
+            // Reset animations for menu items when menu opens
+            if (!menu.classList.contains('hidden')) {
+                const menuItems = menu.querySelectorAll('.mobile-nav-item');
+                menuItems.forEach((item, index) => {
+                    item.style.animation = 'none';
+                    setTimeout(() => {
+                        item.style.animation = `slideInFromLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards`;
+                        item.style.animationDelay = `${(index + 1) * 0.1}s`;
+                    }, 10);
+                });
+            }
         });
 
         // Scroll animations
